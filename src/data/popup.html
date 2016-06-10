@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="img/brunoect-cnnetadaptor.ico">
+<link rel="stylesheet" href="css/style.css" >
+<script type="text/javascript" src="js/configs.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+	<div id="optionFields">
+		<label><input type="checkbox" name="status" value='1' checked="checked">启用 中国网络适应器</label>
+		<span id="statusMsg"></span>
+
+		<hr/>
+
+		<dl>
+			<dt>谷歌字体</dt>
+			<dd>
+				<select name="google_fonts">
+					<option value="0">不处理</option>
+					<option value="1">替换</option>
+					<option value="2" checked>去除</option>
+				</select>
+			</dd>
+			<dt>谷歌字体替换资源</dt>
+			<dd>
+				<select name="google_fonts_resource">
+					<option value="useso">useso</option>
+					<option value="geekzu">geekzu</option>
+					<option value="ustc">ustc</option>
+				</select>
+			</dd>
+
+			<dt>谷歌JS库</dt>
+			<dd>
+				<select name="google_jslibs">
+					<option value="0">不处理</option>
+					<option value="1" checked>替换</option>
+					<option value="2">去除</option>
+				</select>
+			</dd>
+			<dt>谷歌JS库替换资源</dt>
+			<dd>
+				<select name="google_jslibs_resource">
+					<option value="useso">useso</option>
+					<option value="geekzu_http">geekzu_http</option>
+					<option value="geekzu_https">geekzu_https</option>
+					<option value="ustc">ustc</option>
+				</select>
+			</dd>
+
+			<dt>Gravatar头像</dt>
+			<dd>
+				<select name="gravatar_imgs">
+					<option value="0">不处理</option>
+					<option value="1" checked>替换</option>
+					<option value="2">去除</option>
+				</select>
+			</dd>
+			<dt>Gravatar头像替换资源</dt>
+			<dd>
+				<select name="gravatar_imgs_resource">
+					<option value="geekzu_http">geekzu_http</option>
+					<option value="geekzu_https">geekzu_https</option>
+					<option value="duoshuo">duoshuo</option>
+				</select>
+			</dd>
+
+			<dt>自定义屏蔽列表（<a href="http://www.brunoxu.com/brunoect-cnnetadaptor-chrome.html#custom_block_links_intro" target="_blank">规则写法详细说明</a>）</dt>
+			<dd>
+				<select name="custom_block_status">
+					<option value="1">启用</option>
+					<option value="0">不启用</option>
+				</select>
+			</dd>
+			<textarea name="custom_block_links" class="custom_block_links"></textarea>
+		</dl>
+
+		<div class="bottomBar">
+			<input type="button" id="btnSave" value="保存设置" disabled />
+			<div class="positionRight">
+				<a href="http://www.brunoxu.com/" target="_blank">Bruno Xu</a>
+				<a href="http://www.brunoxu.com/brunoect-cnnetadaptor-chrome.html" target="_blank">插件首页</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

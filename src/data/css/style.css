@@ -1,0 +1,43 @@
+body{
+width:500px !important;
+height:auto !important;
+}
+body,#btnSave{
+font-size: 14px;
+}
+
+#optionFields{
+padding: 5px;
+}
+#optionFields dt, #optionFields dd{
+float:left;
+margin-top: 10px;
+}
+#optionFields dt {
+clear: left;
+width: 300px;
+}
+#optionFields hr{
+margin: 10px 0;
+}
+#statusMsg{
+padding-left: 20px;
+color: #05AC05;
+}
+.custom_block_links{
+clear:left;
+width:100%;
+height:150px;
+overflow-y: scroll;
+}
+.bottomBar{
+position:relative;
+}
+.bottomBar .positionRight{
+position:absolute;
+right: 0;
+top: 0;
+}
+.bottomBar .positionRight a{
+padding-left:15px;
+}
