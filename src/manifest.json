@@ -1,6 +1,6 @@
 {
 	"name": "中国网络适应器",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "解决谷歌字体、谷歌JS库等资源在中国网络中受阻所导致的网页打开不畅问题",
 	"permissions": [
 			"webRequest",

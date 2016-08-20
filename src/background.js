@@ -39,7 +39,10 @@ chrome.webRequest.onBeforeRequest.addListener(
 			if (resource['pattern']) {
 				return {redirectUrl: requestUrl.replace(resource['pattern'][0], resource['pattern'][1])};
 			} else if (resource['pattern_regexp']) {
-				eval("return {redirectUrl: requestUrl.replace(resource['pattern_regexp'][0], resource['pattern_regexp'][1])}");
+				$reg_mode_ind = resource['pattern_regexp'][0].lastIndexOf('/') + 1;
+				$reg_mode = resource['pattern_regexp'][0].substr($reg_mode_ind);
+				$regexp_str = resource['pattern_regexp'][0].substr(1, $reg_mode_ind-2);
+				return {redirectUrl: requestUrl.replace(new RegExp($regexp_str, $reg_mode), resource['pattern_regexp'][1])};
 			}
 		} else if (requestUrl.match(/ajax.googleapis.com/i)) {
 			if (brunoect_cnnetadaptor_configs['google_jslibs'] == 0) {
@@ -70,7 +73,10 @@ chrome.webRequest.onBeforeRequest.addListener(
 			if (resource['pattern']) {
 				return {redirectUrl: requestUrl.replace(resource['pattern'][0], resource['pattern'][1])};
 			} else if (resource['pattern_regexp']) {
-				eval("return {redirectUrl: requestUrl.replace(resource['pattern_regexp'][0], resource['pattern_regexp'][1])}");
+				$reg_mode_ind = resource['pattern_regexp'][0].lastIndexOf('/') + 1;
+				$reg_mode = resource['pattern_regexp'][0].substr($reg_mode_ind);
+				$regexp_str = resource['pattern_regexp'][0].substr(1, $reg_mode_ind-2);
+				return {redirectUrl: requestUrl.replace(new RegExp($regexp_str, $reg_mode), resource['pattern_regexp'][1])};
 			}
 		} else if (requestUrl.match(/(\d+|www|secure|cn|s).gravatar.com/i)) {
 			if (brunoect_cnnetadaptor_configs['gravatar_imgs'] == 0) {
@@ -79,7 +85,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 				return {cancel: true};
 			}
 
-			var resources = resources_google_jslibs;
+			var resources = resources_gravatar_imgs;
 			var resource = null;
 			if (resources[brunoect_cnnetadaptor_configs['gravatar_imgs_resource']]) {
 				resource = resources[brunoect_cnnetadaptor_configs['gravatar_imgs_resource']];
@@ -101,7 +107,10 @@ chrome.webRequest.onBeforeRequest.addListener(
 			if (resource['pattern']) {
 				return {redirectUrl: requestUrl.replace(resource['pattern'][0], resource['pattern'][1])};
 			} else if (resource['pattern_regexp']) {
-				eval("return {redirectUrl: requestUrl.replace(resource['pattern_regexp'][0], resource['pattern_regexp'][1])}");
+				$reg_mode_ind = resource['pattern_regexp'][0].lastIndexOf('/') + 1;
+				$reg_mode = resource['pattern_regexp'][0].substr($reg_mode_ind);
+				$regexp_str = resource['pattern_regexp'][0].substr(1, $reg_mode_ind-2);
+				return {redirectUrl: requestUrl.replace(new RegExp($regexp_str, $reg_mode), resource['pattern_regexp'][1])};
 			}
 		} else if (brunoect_cnnetadaptor_configs['custom_block_status'] && brunoect_cnnetadaptor_configs['custom_block_links_arr'].length > 0) {
 			for (var key in brunoect_cnnetadaptor_configs['custom_block_links_arr']) {

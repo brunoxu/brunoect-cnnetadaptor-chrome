@@ -23,3 +23,14 @@
 2. 然后下载[brunoect-cnnetadaptor.crx](https://github.com/brunoxu/brunoect-cnnetadaptor-chrome/blob/master/brunoect-cnnetadaptor.crx?raw=true)
 
 3. 最后把brunoect-cnnetadaptor.crx文件拖到Chrome上就可以安装了。<img src="http://img03.taobaocdn.com/imgextra/i3/581166664/TB2rBMEapXXXXb1XpXXXXXXXXXX_!!581166664.jpg" alt=" chrome-drag"/>
+
+## 更新记录：
+
+v1.1  2016-08-21
+> * fix: gravatar头像无法替换的问题
+> * fix: 使用正则匹配替换时的权限问题
+
+v1.0  2016-06-11
+> * 基本功能实现
+
+
