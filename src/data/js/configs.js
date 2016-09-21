@@ -71,7 +71,7 @@ resources_google_fonts = {
 		'pattern_regexp': null,
 		'http': 1,
 		'https': 0,
-		'enable': 1
+		'enable': 0
 	},
 	'geekzu': {
 		'code': 'geekzu',
@@ -98,7 +98,7 @@ resources_google_jslibs = {
 		'pattern_regexp': null,
 		'http': 1,
 		'https': 0,
-		'enable': 1
+		'enable': 0
 	},
 	'geekzu_http': {
 		'code': 'geekzu_http',
