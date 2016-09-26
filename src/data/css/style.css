@@ -15,7 +15,15 @@ margin-top: 10px;
 }
 #optionFields dt {
 clear: left;
-width: 300px;
+width: 200px;
+}
+#optionFields dd select {
+width: 200px;
+}
+.dotted_line{
+clear: left;
+border-bottom: 1px dashed #BBB2B2;
+padding-top: 10px;
 }
 #optionFields hr{
 margin: 10px 0;
