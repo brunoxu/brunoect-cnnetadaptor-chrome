@@ -20,6 +20,10 @@ function load_brunoect_cnnetadaptor_configs() {
 	if (google_jslibs_resource === null) google_jslibs_resource = 'geekzu_https';
 	brunoect_cnnetadaptor_configs['google_jslibs_resource'] = google_jslibs_resource;
 
+	var google_maps = localStorage.getItem('google_maps');
+	if (google_maps === null) google_maps = 1;
+	brunoect_cnnetadaptor_configs['google_maps'] = parseInt(google_maps);
+
 	var gravatar_imgs = localStorage.getItem('gravatar_imgs');
 	if (gravatar_imgs === null) gravatar_imgs = 1;
 	brunoect_cnnetadaptor_configs['gravatar_imgs'] = parseInt(gravatar_imgs);
@@ -119,6 +123,17 @@ resources_google_jslibs = {
 	'ustc': {
 		'code': 'ustc',
 		'pattern': ['//ajax.googleapis.com/', '//ajax.lug.ustc.edu.cn/'],
+		'pattern_regexp': null,
+		'http': 1,
+		'https': 1,
+		'enable': 1
+	}
+};
+
+resources_google_maps = {
+	'gmapcn': {
+		'code': 'gmapcn',
+		'pattern': ['//maps.google.com/', '//maps.google.cn/'],
 		'pattern_regexp': null,
 		'http': 1,
 		'https': 1,

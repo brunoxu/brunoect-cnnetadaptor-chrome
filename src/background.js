@@ -78,6 +78,40 @@ chrome.webRequest.onBeforeRequest.addListener(
 				$regexp_str = resource['pattern_regexp'][0].substr(1, $reg_mode_ind-2);
 				return {redirectUrl: requestUrl.replace(new RegExp($regexp_str, $reg_mode), resource['pattern_regexp'][1])};
 			}
+		} else if (requestUrl.match(/maps.google.com/i)) {
+			if (brunoect_cnnetadaptor_configs['google_maps'] == 0) {
+				return;
+			} else if (brunoect_cnnetadaptor_configs['google_maps'] == 2) {
+				return {cancel: true};
+			}
+
+			var resources = resources_google_maps;
+			var resource = null;
+			/*if (resources[brunoect_cnnetadaptor_configs['google_maps_resource']]) {
+				resource = resources[brunoect_cnnetadaptor_configs['google_maps_resource']];
+				if (! resource['enable']) resource = null;
+			}*/
+			if (! resource) {
+				for (var key in resources) {
+					if (! resources[key]['enable']) continue;
+					if (resources[key][requestProtocol]) {
+						resource = resources[key];
+						break;
+					}
+				}
+			}
+			if (! resource) {
+				return;
+			}
+
+			if (resource['pattern']) {
+				return {redirectUrl: requestUrl.replace(resource['pattern'][0], resource['pattern'][1])};
+			} else if (resource['pattern_regexp']) {
+				$reg_mode_ind = resource['pattern_regexp'][0].lastIndexOf('/') + 1;
+				$reg_mode = resource['pattern_regexp'][0].substr($reg_mode_ind);
+				$regexp_str = resource['pattern_regexp'][0].substr(1, $reg_mode_ind-2);
+				return {redirectUrl: requestUrl.replace(new RegExp($regexp_str, $reg_mode), resource['pattern_regexp'][1])};
+			}
 		} else if (requestUrl.match(/(\d+|www|secure|cn|s).gravatar.com/i)) {
 			if (brunoect_cnnetadaptor_configs['gravatar_imgs'] == 0) {
 				return;

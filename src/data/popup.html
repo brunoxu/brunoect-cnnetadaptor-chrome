@@ -27,9 +27,9 @@
 			<dt>谷歌字体替换资源</dt>
 			<dd>
 				<select name="google_fonts_resource">
-					<!--<option value="useso">useso</option>-->
-					<option value="geekzu">geekzu</option>
-					<option value="ustc">ustc</option>
+					<!--<option value="useso">useso(http:1,https:0)</option>-->
+					<option value="geekzu">geekzu(http:1,https:1)</option>
+					<option value="ustc">ustc(http:1,https:1)</option>
 				</select>
 			</dd>
 
@@ -44,10 +44,19 @@
 			<dt>谷歌JS库替换资源</dt>
 			<dd>
 				<select name="google_jslibs_resource">
-					<!--<option value="useso">useso</option>-->
-					<option value="geekzu_http">geekzu_http</option>
-					<option value="geekzu_https">geekzu_https</option>
-					<option value="ustc">ustc</option>
+					<!--<option value="useso">useso(http:1,https:0)</option>-->
+					<option value="geekzu_http">geekzu_http(http:1,https:0)</option>
+					<option value="geekzu_https">geekzu_https(http:1,https:1)</option>
+					<option value="ustc">ustc(http:1,https:1)</option>
+				</select>
+			</dd>
+
+			<dt>谷歌地图</dt>
+			<dd>
+				<select name="google_maps">
+					<option value="0">不处理</option>
+					<option value="1" checked>替换</option>
+					<option value="2">去除</option>
 				</select>
 			</dd>
 
@@ -62,9 +71,9 @@
 			<dt>Gravatar头像替换资源</dt>
 			<dd>
 				<select name="gravatar_imgs_resource">
-					<option value="geekzu_http">geekzu_http</option>
-					<option value="geekzu_https">geekzu_https</option>
-					<option value="duoshuo">duoshuo</option>
+					<option value="geekzu_http">geekzu_http(http:1,https:0)</option>
+					<option value="geekzu_https">geekzu_https(http:1,https:1)</option>
+					<option value="duoshuo">duoshuo(http:1,https:0)</option>
 				</select>
 			</dd>
 
